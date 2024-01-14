@@ -20,4 +20,4 @@ Another change is the custom keybindings, I did not include everything, only the
 ### Linux
 1. Go to `~/.config` folder.
 2. Clone this repository there.
-3. It should create a `nvim` folder in the Local folder.
+3. It should create a `nvim` folder in the config folder.

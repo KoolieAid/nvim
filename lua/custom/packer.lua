@@ -47,4 +47,8 @@ return require('packer').startup(function(use)
 		'williamboman/mason-lspconfig.nvim',
 		'neovim/nvim-lspconfig',
 	}
+
+    use 'andweeb/presence.nvim'
+
+    use 'sahlte/timed-highlight.nvim'
 end)
