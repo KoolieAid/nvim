@@ -51,4 +51,5 @@ return require('packer').startup(function(use)
     use 'andweeb/presence.nvim'
 
     use 'sahlte/timed-highlight.nvim'
+
 end)

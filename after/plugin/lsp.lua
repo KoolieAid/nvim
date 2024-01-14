@@ -3,7 +3,7 @@ require('lspconfig').lua_ls.setup({})
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-	ensure_installed = { 'rust_analyzer', 'clangd', 'csharp_ls', 'omnisharp_mono', 'omnisharp' },
+	ensure_installed = { 'rust_analyzer', 'clangd', 'omnisharp', 'omnisharp_mono' },
 	handlers = {
 		lsp.default_setup,
 	}
