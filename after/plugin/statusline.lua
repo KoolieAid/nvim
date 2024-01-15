@@ -16,7 +16,7 @@ require('staline').setup({
 
 	defaults={
 		fg = "#986fec",
-		cool_symbol = "  ",
+		cool_symbol = " ඞ ",
 		left_separator = "",
 		right_separator = "",
 		-- line_column = "%l:%c [%L]",
