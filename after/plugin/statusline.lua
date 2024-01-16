@@ -21,7 +21,7 @@ require('staline').setup({
 		right_separator = "",
 		-- line_column = "%l:%c [%L]",
 		true_colors = true,
-		line_column = "[%l:%c] 並%p%% "
+		line_column = "[%l:%c]  %p%% "
 		-- font_active = "bold"
 	},
 	mode_colors = {
