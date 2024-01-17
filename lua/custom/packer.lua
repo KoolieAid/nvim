@@ -52,4 +52,5 @@ return require('packer').startup(function(use)
 
     use 'sahlte/timed-highlight.nvim'
     use 'tamton-aquib/staline.nvim'
+    use 'xiyaowong/transparent.nvim'
 end)
