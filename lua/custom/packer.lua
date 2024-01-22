@@ -53,4 +53,6 @@ return require('packer').startup(function(use)
     use 'sahlte/timed-highlight.nvim'
     use 'tamton-aquib/staline.nvim'
     use 'xiyaowong/transparent.nvim'
+    use 'stevearc/oil.nvim'
+    use 'nvim-tree/nvim-web-devicons'
 end)
