@@ -65,10 +65,13 @@ return {
     {
         "neovim/nvim-lspconfig",
         config = function()
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
             local config = require("lspconfig")
             for _, v in ipairs(installed_lsps) do
                 if v ~= "omnisharp_mono" then
-                    config[v].setup({})
+                    config[v].setup({
+                        capabilities = capabilities,
+                    })
                 end
             end
             -- vim.keymap.set("n", "K", vim.lsp.buf.hover, {})

@@ -30,15 +30,6 @@ return {
             null_ls.setup({
                 sources = source_list,
             })
-
-            -- null_ls.setup({
-            -- 	sources = {
-            -- 		null_ls.builtins.formatting.stylua,
-            -- 		null_ls.builtins.formatting.rustfmt,
-            -- 		-- null_ls.builtins.diagnostics.rustfmt,
-            -- 		null_ls.builtins.completion.spell,
-            -- 	},
-            -- })
         end,
     },
 }
