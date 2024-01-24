@@ -1,17 +1,3 @@
-vim = vim
-local lsp_zero_config = function()
-    local lsp = require("lsp-zero")
-    require("lspconfig").lua_ls.setup({})
-
-    require("mason").setup({})
-    require("mason-lspconfig").setup({
-        ensure_installed = { "rust_analyzer", "clangd", "omnisharp", "omnisharp_mono", "lua_ls" },
-        handlers = {
-            lsp.default_setup,
-        },
-    })
-end
-
 local installed_lsps = { "rust_analyzer", "clangd", "omnisharp", "omnisharp_mono", "lua_ls" }
 
 local function attach_lsp_keymaps()
