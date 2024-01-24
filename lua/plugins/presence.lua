@@ -1,9 +1,9 @@
 return {
-    'andweeb/presence.nvim',
+    "andweeb/presence.nvim",
     -- lazy = true,
     config = function()
-        require('presence').setup({
+        require("presence").setup({
             neovim_image_text = "neovim btw",
         })
-    end
+    end,
 }
