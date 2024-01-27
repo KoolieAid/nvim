@@ -1,12 +1,4 @@
 return {
-    -- Dusk fox theme, but I might remove this, I liked habanax
-    {
-        "EdenEast/nightfox.nvim",
-        lazy = false,
-        config = function()
-            vim.cmd.colorscheme("habamax")
-        end,
-    },
     "nvim-tree/nvim-web-devicons",
     {
         "goolord/alpha-nvim",

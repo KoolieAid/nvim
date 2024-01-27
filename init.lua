@@ -1,5 +1,7 @@
 require("custom")
 
+vim.cmd.colorscheme("habamax")
+
 -- Line numbers
 vim.wo.number = true
 vim.wo.relativenumber = true
