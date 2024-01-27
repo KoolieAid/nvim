@@ -1,8 +1,7 @@
 return {
 	"andweeb/presence.nvim",
-	lazy = true,
+    event = "VeryLazy",
 	opts = {
 		neovim_image_text = "neovim btw",
 	},
-	cmd = "Disc",
 }

@@ -7,6 +7,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+-- Delete to void and paste. (In Visual Block)
 vim.keymap.set("x", "<leader>p", '"_dP')
 
 vim.keymap.set("n", "<leader>y", '"+y')
