@@ -16,9 +16,12 @@ However, other complex stuff such as LSPs, Completions, Linting and Formatting a
 ## Suggestions
 - Issues and PRs are welcome :)
     - Issue for things that I may figure out myself
-    - PRs for things that I cannot figure out on my own. (5 days of learning rn)
+    - PRs for things that I cannot figure out on my own. 
 
 ## How to use
+### Prerequisite 
+1. Have `ripgrep` installed for telescope 
+2. Have a C compiler installed (i.e. gcc, clang) for telescope
 
 ### Windows
 1. Go to `AppData/Local`
