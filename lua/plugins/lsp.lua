@@ -41,6 +41,7 @@ return {
     },
     {
         "williamboman/mason-lspconfig.nvim",
+        event = "VeryLazy",
         opts = {
             ensure_installed = installed_lsps,
             -- handlers = {
@@ -50,6 +51,7 @@ return {
     },
     {
         "neovim/nvim-lspconfig",
+        event = "VeryLazy",
         config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
             local config = require("lspconfig")
@@ -66,6 +68,7 @@ return {
     },
     {
         "nvim-telescope/telescope-ui-select.nvim",
+        event = "VeryLazy",
         config = function()
             -- This is your opts table
             require("telescope").setup({
