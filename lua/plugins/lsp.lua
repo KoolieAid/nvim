@@ -41,7 +41,7 @@ return {
     },
     {
         "williamboman/mason-lspconfig.nvim",
-        event = "VeryLazy",
+        event = "InsertEnter",
         opts = {
             ensure_installed = installed_lsps,
             -- handlers = {
@@ -51,7 +51,7 @@ return {
     },
     {
         "neovim/nvim-lspconfig",
-        event = "VeryLazy",
+        event = "InsertEnter",
         config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
             local config = require("lspconfig")
