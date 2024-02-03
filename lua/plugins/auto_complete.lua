@@ -44,7 +44,7 @@ return {
     -- Source engine of snippets, gets the sources from snippet repositories and displays in nvim-cmp
     {
         "L3MON4D3/LuaSnip",
-        event = "VeryLazy",
+        event = "InsertEnter",
         dependencies = {
             -- Collection of snippets / Repository of snippets
             "rafamadriz/friendly-snippets",
@@ -57,11 +57,11 @@ return {
     -- Bridge of snippets and autocompletion engine, autocompletes based on snippet
     {
         "saadparwaiz1/cmp_luasnip",
-        event = "VeryLazy",
+        event = "InsertEnter",
     },
     -- Bridge of autocompletion and LSPs, acts like LuaSnip, but the sources are from language servers
     {
         "hrsh7th/cmp-nvim-lsp",
-        event = "VeryLazy",
+        event = "InsertEnter",
     },
 }

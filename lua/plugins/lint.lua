@@ -19,6 +19,7 @@ return {
     {
         "nvimtools/none-ls.nvim",
         name = "null-ls",
+        event = "InsertEnter",
         config = function()
             local null_ls = require("null-ls")
             local source_list = {}
