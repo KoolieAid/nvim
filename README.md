@@ -22,6 +22,7 @@ However, other complex stuff such as LSPs, Completions, Linting and Formatting a
 ### Prerequisite 
 1. Have `ripgrep` installed for telescope 
 2. Have a C compiler installed (i.e. gcc, clang) for telescope
+3. Have Node JS v18+ installed for copilot
 
 ### Windows
 1. Go to `AppData/Local`
