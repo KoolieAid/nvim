@@ -2,7 +2,7 @@ local installed_lsps = { "rust_analyzer", "clangd", "omnisharp", "omnisharp_mono
 
 local function attach_lsp_keymaps()
     -- Use LspAttach autocommand to only map the following keys
-    -- after the language server attaches to the current buffer
+    -- after a language server attaches to the current buffer
     vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("UserLspConfig", {}),
         callback = function(ev)
@@ -44,9 +44,6 @@ return {
         event = "InsertEnter",
         opts = {
             ensure_installed = installed_lsps,
-            -- handlers = {
-            --     lsp.default_setup,
-            -- }
         },
     },
     {
@@ -62,13 +59,14 @@ return {
                     })
                 end
             end
-            -- vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+
             attach_lsp_keymaps()
         end,
     },
     {
         "nvim-telescope/telescope-ui-select.nvim",
         event = "VeryLazy",
+        dependencies = { "nvim-telescope/telescope.nvim" },
         config = function()
             -- This is your opts table
             require("telescope").setup({
