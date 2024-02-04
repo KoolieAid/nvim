@@ -48,7 +48,6 @@ return {
         dependencies = {
             -- Collection of snippets / Repository of snippets
             "rafamadriz/friendly-snippets",
-
         },
         config = function()
             require("luasnip.loaders.from_vscode").lazy_load()
@@ -62,6 +61,11 @@ return {
     -- Bridge of autocompletion and LSPs, acts like LuaSnip, but the sources are from language servers
     {
         "hrsh7th/cmp-nvim-lsp",
+        event = "InsertEnter",
+    },
+    -- Copilot, autocompletion engine that uses AI to generate code
+    {
+        "github/copilot.vim",
         event = "InsertEnter",
     },
 }
