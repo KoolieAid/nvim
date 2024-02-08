@@ -1,4 +1,21 @@
-local installed_lsps = { "rust_analyzer", "clangd", "omnisharp", "omnisharp_mono", "lua_ls" }
+local installed_lsps = { "rust_analyzer", "clangd", "omnisharp", "lua_ls" }
+
+function table.deepcopy(og)
+    local cpy = {}
+    for k, v in pairs(og) do
+        if type(v) == "table" then
+            v = table.deepcopy(v)
+        end
+        cpy[k] = v
+    end
+    return cpy
+end
+
+local default_lsp_cfg = {}
+
+local specific_cfg = {
+    rustfmt = {},
+}
 
 local function attach_lsp_keymaps()
     -- Use LspAttach autocommand to only map the following keys
@@ -52,12 +69,19 @@ return {
         config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
             local config = require("lspconfig")
-            for _, v in ipairs(installed_lsps) do
-                if v ~= "omnisharp_mono" then
-                    config[v].setup({
-                        capabilities = capabilities,
-                    })
+            for _, lsp in ipairs(installed_lsps) do
+
+                local opts = table.deepcopy(default_lsp_cfg);
+                opts.capabilities = capabilities
+
+                if specific_cfg[lsp] then
+                    local cfg = specific_cfg[lsp]
+                    for k, v in pairs(cfg) do
+                        opts[k] = v
+                    end
                 end
+
+                config[lsp].setup(opts)
             end
 
             attach_lsp_keymaps()
@@ -68,14 +92,10 @@ return {
         event = "VeryLazy",
         dependencies = { "nvim-telescope/telescope.nvim" },
         config = function()
-            -- This is your opts table
             require("telescope").setup({
                 extensions = {
                     ["ui-select"] = {
-                        require("telescope.themes").get_dropdown({
-                            -- even more opts
-                        }),
-
+                        require("telescope.themes").get_dropdown({}),
                         -- pseudo code / specification for writing custom displays, like the one
                         -- for "codeactions"
                         -- specific_opts = {

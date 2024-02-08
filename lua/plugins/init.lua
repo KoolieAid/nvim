@@ -2,6 +2,13 @@ return {
 	-- File explorer
 	{
 		"stevearc/oil.nvim",
+        keys = {
+            {
+                "<leader>pv",
+                "<CMD>Oil<CR>",
+                desc = "Open Oil file explorer",
+            },
+        },
 		opts = {
 			columns = {
 				"icon",
