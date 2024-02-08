@@ -39,6 +39,13 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.5",
+        keys = {
+            {
+                "<leader>dg",
+                "<CMD>Telescope diagnostics<CR>",
+                desc = "Open telescope diagnostics",
+            },
+        },
         config = function()
             local telescope = require("telescope.builtin")
             vim.keymap.set("n", "<leader>pf", telescope.find_files, {})
