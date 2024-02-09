@@ -10,8 +10,7 @@ Since I found out that packer.nvim is deprecated, I switched to lazy.nvim, propm
 However, other complex stuff such as LSPs, Completions, Linting and Formatting are derived from typecraft's Neovim series.  
 
 ### Things I'm not sure how to fix  
-1. Discord Presence not working anymore, unsure how to setup the lazy loading for this one, packer version seems to work fine  
-2. LSP won't start on lua files, `LspInfo` says the root directory is not set, so idk anymore  
+1. LSP won't start on lua files, `LspInfo` says the root directory is not set, so idk anymore  
 
 ## Suggestions
 - Issues and PRs are welcome :)
@@ -21,7 +20,7 @@ However, other complex stuff such as LSPs, Completions, Linting and Formatting a
 ## How to use
 ### Prerequisite 
 1. Have `ripgrep` installed for telescope 
-2. Have a C compiler installed (i.e. gcc, clang) for telescope
+2. Have a C compiler installed (i.e. gcc, clang) for tree-sitter
 3. Have Node JS v18+ installed for copilot
 
 ### Windows

@@ -67,5 +67,12 @@ return {
     {
         "github/copilot.vim",
         event = "InsertEnter",
+        enabled = function()
+            local exists = os.execute("node --version")
+            if exists == 1 then
+                return false
+            end
+            return true
+        end
     },
 }

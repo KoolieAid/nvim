@@ -2,7 +2,16 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     event = "InsertEnter",
-
+    enabled = function()
+        local compilers = { "gcc", "clang", "cc" }
+        for _, c in ipairs(compilers) do
+            local out = pcall(vim.cmd, "silent !" .. c .. " --version")
+            if out == 0 then
+                return true
+            end
+        end
+        return false
+    end,
     config = function()
         require("nvim-treesitter.configs").setup({
             -- A list of parser names, or "all" (the five listed parsers should always be installed)
