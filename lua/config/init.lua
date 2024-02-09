@@ -1,5 +1,5 @@
-require("custom.remap")
-require("custom.lazy")
+require("config.remap")
+require("config.lazy")
 
 -- Changes the shell from Command Prompt to Powershell only if nvim instance is in Windows
 if vim.loop.os_uname().sysname == "Windows_NT" then
@@ -9,5 +9,5 @@ if vim.loop.os_uname().sysname == "Windows_NT" then
 end
 
 if vim.g.neovide then
-    require("custom.neovide")
+    require("config.neovide")
 end

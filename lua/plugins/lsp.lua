@@ -1,21 +1,8 @@
-local installed_lsps = { "rust_analyzer", "clangd", "omnisharp", "lua_ls" }
+local installed_lsps = require("config.lsp").installed
 
-function table.deepcopy(og)
-    local cpy = {}
-    for k, v in pairs(og) do
-        if type(v) == "table" then
-            v = table.deepcopy(v)
-        end
-        cpy[k] = v
-    end
-    return cpy
-end
+local default_lsp_cfg = require("config.lsp").default_cfg
 
-local default_lsp_cfg = {}
-
-local specific_cfg = {
-    rustfmt = {},
-}
+local specific_cfg = require("config.lsp").custom_opts
 
 local function attach_lsp_keymaps()
     -- Use LspAttach autocommand to only map the following keys
