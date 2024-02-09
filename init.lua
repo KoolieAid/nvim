@@ -1,4 +1,5 @@
-require("custom")
+require("util")
+require("config")
 
 vim.cmd.colorscheme("habamax")
 
