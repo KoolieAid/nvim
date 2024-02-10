@@ -69,4 +69,9 @@ return {
             vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
         end,
     },
+    {
+        "numToStr/Comment.nvim",
+        name = "comment",
+        config = true,
+    },
 }
