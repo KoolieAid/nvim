@@ -5,7 +5,7 @@ return {
     enabled = function()
         local compilers = { "gcc", "clang", "cc" }
         for _, c in ipairs(compilers) do
-            local out = pcall(vim.cmd, "silent !" .. c .. " --version")
+            local out = os.execute(c .. " --version")
             if out == 0 then
                 return true
             end
