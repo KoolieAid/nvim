@@ -2,7 +2,7 @@ local installed_lsps = require("config.lsp").installed
 
 local default_lsp_cfg = require("config.lsp").default_cfg
 
-local specific_cfg = require("config.lsp").custom_opts
+local specific_cfg = require("config.lsp").opts
 
 local function attach_lsp_keymaps()
     -- Use LspAttach autocommand to only map the following keys
