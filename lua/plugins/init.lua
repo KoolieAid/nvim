@@ -26,5 +26,6 @@ return {
 	{
 		"notjedi/nvim-rooter.lua",
 		config = true,
+        cmd = "Rooter",
 	},
 }

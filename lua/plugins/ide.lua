@@ -7,6 +7,17 @@ return {
     },
     {
         "ThePrimeagen/harpoon",
+        keys = {
+            { "<leader>n", desc = "Open next file", },
+            { "<leader>p", desc = "Open previous file", },
+            { "<leader>a", desc = "Add file to harpoon", },
+            { "<leader>r", desc = "Remove file from harpoon", },
+            { "<C-e>", desc = "Toggle quick menu", },
+            { "<C-h>", desc = "Navigate to file 1", },
+            { "<C-j>", desc = "Navigate to file 2", },
+            { "<C-k>", desc = "Navigate to file 3", },
+            { "<C-l>", desc = "Navigate to file 4", },
+        },
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
@@ -65,6 +76,12 @@ return {
     },
     {
         "mbbill/undotree",
+        keys = {
+            {
+                "<leader>u",
+                desc = "Open undo tree",
+            },
+        },
         config = function()
             vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
         end,
@@ -73,5 +90,6 @@ return {
         "numToStr/Comment.nvim",
         name = "comment",
         config = true,
+        event = "LspAttach",
     },
 }
