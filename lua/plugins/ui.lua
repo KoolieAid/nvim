@@ -76,7 +76,18 @@ return {
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
-		config = true,
+        config = function()
+            vim.o.showcmdloc = "statusline"
+            require("lualine").setup({
+                sections = {
+                    lualine_x = {
+                        "%S",
+                        "fileformat",
+                        "filetype",
+                    },
+                },
+            })
+        end,
 	},
 	{
 		"nanozuki/tabby.nvim",
@@ -89,8 +100,8 @@ return {
 	{
 		-- Notifications
 		"folke/noice.nvim",
-		event = "VeryLazy",
-		config = true,
+		event = "CmdLineEnter",
+        config = true,
 		dependencies = {
 			"MunifTanjim/nui.nvim",
 			"rcarriga/nvim-notify",
