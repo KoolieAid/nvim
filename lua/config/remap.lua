@@ -23,3 +23,5 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Overide Ctrl-c with Esc
 vim.keymap.set("", "<C-c>", "<Esc>")
+
+vim.keymap.set("i", "<C-BS>", "<C-w>")
