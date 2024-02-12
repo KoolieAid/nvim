@@ -100,6 +100,7 @@ return {
 	{
 		-- Notifications
 		"folke/noice.nvim",
+        enabled = false,
 		event = "CmdLineEnter",
         config = true,
 		dependencies = {

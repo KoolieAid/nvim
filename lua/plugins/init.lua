@@ -1,7 +1,7 @@
 return {
-	-- File explorer
-	{
-		"stevearc/oil.nvim",
+    -- File explorer
+    {
+        "stevearc/oil.nvim",
         keys = {
             {
                 "<leader>pv",
@@ -9,23 +9,36 @@ return {
                 desc = "Open Oil file explorer",
             },
         },
-		opts = {
-			columns = {
-				"icon",
-				"size",
-			},
-			delete_to_trash = true,
-			view_options = {
-				show_hidden = true,
-				is_hidden_file = function(name)
-					return vim.startswith(name, ".") and name ~= "../"
-				end,
-			},
-		},
-	},
-	{
-		"notjedi/nvim-rooter.lua",
-		config = true,
+        opts = {
+            columns = {
+                "icon",
+                "size",
+            },
+            delete_to_trash = true,
+            view_options = {
+                show_hidden = true,
+                is_hidden_file = function(name)
+                    return vim.startswith(name, ".") and name ~= "../"
+                end,
+            },
+        },
+    },
+    {
+        "notjedi/nvim-rooter.lua",
+        config = true,
         cmd = "Rooter",
-	},
+    },
+    -- Specific to C#
+    {
+        "iabdelkareem/csharp.nvim",
+        ft = "cs",
+        dependencies = {
+            "williamboman/mason.nvim",
+        },
+        opts = {
+            lsp = {
+                cmd_path = true,
+            },
+        },
+    },
 }
