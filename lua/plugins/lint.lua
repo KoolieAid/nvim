@@ -1,13 +1,8 @@
-local formatters = {
-    "stylua",
-    "rustfmt",
-}
+local formatters = require("config.lint").formatters
 
-local diagnostics = {}
+local diagnostics = require("config.lint").diagnostics
 
-local completions = {
-    "spell",
-}
+local completions = require("config.lint").completions
 
 local function append_to_source(plugin, source, type, list)
     for _, v in ipairs(list) do
