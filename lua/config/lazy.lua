@@ -13,6 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
     install = {
-        colorsceme = { "habamax", "duskfox" },
+        colorsceme = { "catppuccin", "habamax" },
     },
 })

@@ -1,7 +1,7 @@
 require("util")
 require("config")
 
-vim.cmd.colorscheme("habamax")
+vim.cmd.colorscheme("catppuccin")
 
 -- Line numbers
 vim.wo.number = true

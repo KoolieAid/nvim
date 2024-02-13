@@ -97,4 +97,8 @@ return {
 			})
 		end,
 	},
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+    },
 }
