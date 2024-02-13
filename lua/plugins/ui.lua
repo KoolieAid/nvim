@@ -97,15 +97,4 @@ return {
 			})
 		end,
 	},
-	{
-		-- Notifications
-		"folke/noice.nvim",
-        enabled = false,
-		event = "CmdLineEnter",
-        config = true,
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-		},
-	},
 }
