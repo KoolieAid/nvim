@@ -34,6 +34,7 @@ return {
         ft = "cs",
         dependencies = {
             "williamboman/mason.nvim",
+            "Tastyep/structlog.nvim",
         },
         opts = {
             lsp = {
