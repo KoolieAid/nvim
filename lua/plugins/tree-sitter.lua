@@ -1,17 +1,12 @@
+local compilers = { "gcc", "clang", "cc" }
+
 return {
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         event = "InsertEnter",
         enabled = function()
-            local compilers = { "gcc", "clang", "cc" }
-            for _, c in ipairs(compilers) do
-                local out = os.execute(c .. " --version")
-                if out == 0 then
-                    return true
-                end
-            end
-            return false
+            return Cli_exists(compilers)
         end,
         config = function()
             require("nvim-treesitter.configs").setup({
@@ -46,6 +41,9 @@ return {
     {
         "nvim-treesitter/nvim-treesitter-context",
         event = "InsertEnter",
+        enabled = function ()
+            return Cli_exists(compilers)
+        end,
         dependencies = {
             "nvim-treesitter/nvim-treesitter",
         },
