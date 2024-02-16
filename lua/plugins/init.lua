@@ -2,6 +2,7 @@ return {
     -- File explorer
     {
         "stevearc/oil.nvim",
+        cmd = "Oil",
         keys = {
             {
                 "<leader>pv",
