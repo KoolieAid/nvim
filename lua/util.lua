@@ -1,8 +1,7 @@
 table.deepcopy = vim.deepcopy
 
 function Cli_exists(...)
-    local clis = {...}
-    for _, c in ipairs(clis) do
+    for _, c in ipairs(...) do
         if type(c) ~= "string" then
             return nil, "Argument needs to be a string"
         end
