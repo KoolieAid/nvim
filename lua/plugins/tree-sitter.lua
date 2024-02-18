@@ -1,12 +1,10 @@
-local compilers = { "gcc", "clang", "cc" }
-
 return {
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         event = "InsertEnter",
         enabled = function()
-            return Cli_exists(compilers)
+            return Cli_exists("gcc", "clang", "cc")
         end,
         config = function()
             require("nvim-treesitter.configs").setup({
@@ -41,8 +39,8 @@ return {
     {
         "nvim-treesitter/nvim-treesitter-context",
         event = "InsertEnter",
-        enabled = function ()
-            return Cli_exists(compilers)
+        enabled = function()
+            return Cli_exists("gcc", "clang", "cc")
         end,
         dependencies = {
             "nvim-treesitter/nvim-treesitter",
