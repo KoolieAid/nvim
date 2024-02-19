@@ -14,8 +14,8 @@ vim.keymap.set("n", "<leader>y", '"+y')
 vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+Y')
 
-vim.keymap.set("n", "<leader>sp", '"+p')
-vim.keymap.set("n", "<leader>sP", '"+P')
+vim.keymap.set("n", "<leader><leader>p", '"+p')
+vim.keymap.set("n", "<leader><leader>P", '"+P')
 
 -- Visual Move by Primeagen
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
