@@ -20,3 +20,4 @@ vim.opt.wrap = false
 vim.opt.updatetime = 50
 
 vim.o.showmode = false
+vim.o.showcmdloc = "statusline"

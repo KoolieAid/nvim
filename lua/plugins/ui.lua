@@ -1,104 +1,106 @@
--- Copied from https://github.com/goolord/alpha-nvim/blob/main/lua/alpha/themes/dashboard.lua
---- @param sc string
---- @param txt string
---- @param keybind string? optional
---- @param keybind_opts table? optional
-local function button(sc, txt, keybind, keybind_opts)
-	local sc_ = sc:gsub("%s", ""):gsub("SPC", "<leader>")
-
-	local opts = {
-		position = "center",
-		shortcut = sc,
-		cursor = 3,
-		width = 50,
-		align_shortcut = "right",
-		hl_shortcut = "Keyword",
-	}
-	if keybind then
-		keybind_opts = vim.F.if_nil(keybind_opts, { noremap = true, silent = true, nowait = true })
-		opts.keymap = { "n", sc_, keybind, keybind_opts }
-	end
-
-	local function on_press()
-		local key = vim.api.nvim_replace_termcodes(keybind or sc_ .. "<Ignore>", true, false, true)
-		vim.api.nvim_feedkeys(key, "t", false)
-	end
-
-	return {
-		type = "button",
-		val = txt,
-		on_press = on_press,
-		opts = opts,
-	}
-end
-
 return {
 	{
-		"goolord/alpha-nvim",
+		"nvimdev/dashboard-nvim",
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
-		config = function()
-			local alpha = require("alpha")
-			local dashboard = require("alpha.themes.dashboard")
-
-			dashboard.section.header.val = {
-				[[                                                                       ]],
-				[[                                                                       ]],
-				[[                                                                       ]],
-				[[                                                                       ]],
-				[[                                                                     ]],
-				[[       ████ ██████           █████      ██                     ]],
-				[[      ███████████             █████                             ]],
-				[[      █████████ ███████████████████ ███   ███████████   ]],
-				[[     █████████  ███    █████████████ █████ ██████████████   ]],
-				[[    █████████ ██████████ █████████ █████ █████ ████ █████   ]],
-				[[  ███████████ ███    ███ █████████ █████ █████ ████ █████  ]],
-				[[ ██████  █████████████████████ ████ █████ █████ ████ ██████ ]],
-				[[                                                                       ]],
-				[[                                                                       ]],
-				[[                                                                       ]],
-			}
-
-			dashboard.section.buttons.val = {
-				button("e", "  New file", "<cmd>enew <CR>"),
-				button("SPC p f", "󰈞  Find file", "<leader>pf"),
-				button("SPC p s", "󰈬  Find word", "<leader>ps"),
-				button("Ctrl e", "  Open harpoon list", "<C-e>"),
-				button("` 0", "  Open last session", "`0"),
-			}
-			alpha.setup(dashboard.opts)
-		end,
+		opts = {
+			theme = "doom",
+			config = {
+				header = {
+					[[                                                                       ]],
+					[[                                                                       ]],
+					[[                                                                       ]],
+					[[                                                                       ]],
+					[[                                                                     ]],
+					[[       ████ ██████           █████      ██                     ]],
+					[[      ███████████             █████                             ]],
+					[[      █████████ ███████████████████ ███   ███████████   ]],
+					[[     █████████  ███    █████████████ █████ ██████████████   ]],
+					[[    █████████ ██████████ █████████ █████ █████ ████ █████   ]],
+					[[  ███████████ ███    ███ █████████ █████ █████ ████ █████  ]],
+					[[ ██████  █████████████████████ ████ █████ █████ ████ ██████ ]],
+					[[                                                                       ]],
+					[[                                                                       ]],
+					[[                                                                       ]],
+				},
+                center = {
+                    -- New File
+                    {
+                        icon = " ",
+                        icon_hl = "DashboardIcon",
+                        desc = "New File",
+                        desc_hl = "DashboardDesc",
+                        key = "n",
+                        key_map = "SPC n n",
+                        key_format = "%s",
+                        action = "enew",
+                    },
+                    -- Find file
+                    {
+                        icon = " 󰈞 ",
+                        icon_hl = "DashboardIcon",
+                        desc = "Find File",
+                        desc_hl = "DashboardDesc",
+                        key = "f",
+                        key_map = "SPC f f",
+                        key_format = "%s",
+                        action = "Telescope find_files",
+                    },
+                    -- Find String
+                    {
+                        icon = "  ",
+                        icon_hl = "DashboardIcon",
+                        desc = "Find String",
+                        desc_hl = "DashboardDesc",
+                        key = "s",
+                        key_map = "SPC p s",
+                        key_format = "%s",
+                        action = "Telescope live_grep",
+                    },
+                    -- Open File explorer
+                    {
+                        icon = " ",
+                        icon_hl = "DashboardIcon",
+                        desc = "Open File Explorer",
+                        desc_hl = "DashboardDesc",
+                        key = "e",
+                        key_map = "SPC p v",
+                        key_format = "%s",
+                        action = "Oil",
+                    },
+                },
+			},
+		},
 	},
 	-- Status line
 	{
 		"nvim-lualine/lualine.nvim",
+        event = "VeryLazy",
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
-        config = function()
-            vim.o.showcmdloc = "statusline"
-            require("lualine").setup({
-                sections = {
-                    lualine_x = {
-                        "%S",
-                        "fileformat",
-                        "filetype",
-                    },
-                },
-            })
-        end,
+		opts = {
+			sections = {
+				lualine_x = {
+					"%S",
+					"fileformat",
+					"filetype",
+				},
+			},
+		},
 	},
 	{
 		"nanozuki/tabby.nvim",
+        event = "VeryLazy",
 		config = function()
 			require("tabby.tabline").use_preset("active_wins_at_tail", {
 				lualine_theme = "auto",
 			})
 		end,
 	},
-    {
-        "catppuccin/nvim",
-        name = "catppuccin",
-    },
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+	},
 }
