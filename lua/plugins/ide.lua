@@ -1,6 +1,7 @@
 return {
     {
         "sahlte/timed-highlight.nvim",
+        keys = { "/", "?", "*", "#" },
         opts = {
             highlight_timeout_ms = 2500,
         },

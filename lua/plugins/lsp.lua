@@ -53,11 +53,10 @@ return {
     },
     {
         "neovim/nvim-lspconfig",
-        -- event = "InsertEnter",
+        event = { "BufRead", "BufAdd" },
         dependencies = {
             "williamboman/mason-lspconfig.nvim",
         },
-        event = { "BufRead", "BufAdd" },
         config = function()
             local mason_cfg = require("mason-lspconfig")
             mason_cfg.setup_handlers({
