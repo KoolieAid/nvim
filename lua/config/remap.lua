@@ -10,12 +10,11 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", '"_dP')
 
 -- System copy paste
-vim.keymap.set("n", "<leader>y", '"+y')
-vim.keymap.set("v", "<leader>y", '"+y')
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+Y')
 
-vim.keymap.set("n", "<leader><leader>p", '"+p')
-vim.keymap.set("n", "<leader><leader>P", '"+P')
+vim.keymap.set({ "n", "v" }, "<leader><leader>p", '"+p')
+vim.keymap.set({ "n", "v" }, "<leader><leader>P", '"+P')
 
 -- Visual Move by Primeagen
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

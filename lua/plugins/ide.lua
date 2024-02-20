@@ -57,19 +57,35 @@ return {
                 "<CMD>Telescope diagnostics<CR>",
                 desc = "Open telescope diagnostics",
             },
+            {
+                "<leader>pf",
+                "<CMD>Telescope find_files<CR>",
+                desc = "Find files",
+            },
+            {
+                "<C-p>",
+                "<CMD>Telescope git_files<CR>",
+                desc = "Find git files",
+            },
+            {
+                "<leader>ps",
+                desc = "Grep string",
+            },
         },
         config = function()
             local telescope = require("telescope.builtin")
-            vim.keymap.set("n", "<leader>pf", telescope.find_files, {})
-            vim.keymap.set("n", "<C-p>", telescope.git_files, {})
             vim.keymap.set("n", "<leader>ps", function()
                 telescope.grep_string({ search = vim.fn.input("Grep > ") })
             end)
 
+            local actions = require("telescope.actions")
+
             require("telescope").setup({
-                pickers = {
-                    colorscheme = {
-                        enable_preview = true,
+                pickers = { colorscheme = { enable_preview = true } },
+                defaults = {
+                    mappings = {
+                        n = { ["<C-c>"] = actions.close },
+                        i = { ["<C-c>"] = { "<Esc>", type = "command" } },
                     },
                 },
             })
@@ -80,12 +96,10 @@ return {
         keys = {
             {
                 "<leader>u",
+                "<CMD>UndotreeToggle<CR>",
                 desc = "Open undo tree",
             },
         },
-        config = function()
-            vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
-        end,
     },
     {
         "numToStr/Comment.nvim",
