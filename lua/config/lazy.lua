@@ -15,4 +15,7 @@ require("lazy").setup("plugins", {
     install = {
         colorsceme = { "catppuccin", "habamax" },
     },
+    performance = {
+        rtp = { disabled_plugins = { "netrwPlugin" } },
+    },
 })
