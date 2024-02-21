@@ -9,15 +9,15 @@ return {
     {
         "ThePrimeagen/harpoon",
         keys = {
-            { "<leader>n", desc = "Open next file", },
-            { "<leader>p", desc = "Open previous file", },
-            { "<leader>a", desc = "Add file to harpoon", },
-            { "<leader>r", desc = "Remove file from harpoon", },
-            { "<C-e>", desc = "Toggle quick menu", },
-            { "<C-h>", desc = "Navigate to file 1", },
-            { "<C-j>", desc = "Navigate to file 2", },
-            { "<C-k>", desc = "Navigate to file 3", },
-            { "<C-l>", desc = "Navigate to file 4", },
+            { "<leader>n", desc = "Open next file" },
+            { "<leader>p", desc = "Open previous file" },
+            { "<leader>a", desc = "Add file to harpoon" },
+            { "<leader>r", desc = "Remove file from harpoon" },
+            { "<C-e>",     desc = "Toggle quick menu" },
+            { "<C-h>",     desc = "Navigate to file 1" },
+            { "<C-j>",     desc = "Navigate to file 2" },
+            { "<C-k>",     desc = "Navigate to file 3" },
+            { "<C-l>",     desc = "Navigate to file 4" },
         },
         dependencies = {
             "nvim-lua/plenary.nvim",
@@ -70,6 +70,11 @@ return {
             {
                 "<leader>ps",
                 desc = "Grep string",
+            },
+            {
+                "<leader>hh",
+                "<CMD>Telescope help_tags<CR>",
+                desc = "Find help tags",
             },
         },
         config = function()
