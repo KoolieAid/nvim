@@ -1,6 +1,9 @@
+local ts_enabled = true
+
 return {
     {
         "nvim-treesitter/nvim-treesitter",
+        enabled = ts_enabled,
         build = ":TSUpdate",
         event = "InsertEnter",
         config = function()
@@ -35,6 +38,7 @@ return {
     },
     {
         "nvim-treesitter/nvim-treesitter-context",
+        enabled = ts_enabled,
         event = "InsertEnter",
         dependencies = {
             "nvim-treesitter/nvim-treesitter",
