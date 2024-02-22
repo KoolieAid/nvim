@@ -103,7 +103,7 @@ return {
 	},
 	{
 		"nanozuki/tabby.nvim",
-        event = "VeryLazy",
+        event = "TabNew",
 		config = function()
 			require("tabby.tabline").use_preset("active_wins_at_tail", {
 				lualine_theme = "auto",
