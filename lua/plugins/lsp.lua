@@ -81,7 +81,7 @@ return {
     },
     {
         "nvim-telescope/telescope-ui-select.nvim",
-        event = "VeryLazy",
+        event = "QuickFixCmdPre",
         dependencies = { "nvim-telescope/telescope.nvim" },
         config = function()
             require("telescope").setup({
