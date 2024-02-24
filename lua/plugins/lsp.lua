@@ -81,7 +81,7 @@ return {
     },
     {
         "nvim-telescope/telescope-ui-select.nvim",
-        event = "QuickFixCmdPre",
+        keys = { "<leader>ca", desc = "Code actions" },
         dependencies = { "nvim-telescope/telescope.nvim" },
         config = function()
             require("telescope").setup({

@@ -39,7 +39,7 @@ return {
     {
         "nvim-treesitter/nvim-treesitter-context",
         enabled = ts_enabled,
-        event = "InsertEnter",
+        event = "LspAttach",
         dependencies = {
             "nvim-treesitter/nvim-treesitter",
         },
