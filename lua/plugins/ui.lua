@@ -27,7 +27,7 @@ return {
                 center = {
                     -- New File
                     {
-                        icon = "       ",
+                        icon = "\t\t",
                         icon_hl = "DashboardIcon",
                         desc = "New File",
                         desc_hl = "DashboardDesc",
@@ -38,7 +38,7 @@ return {
                     },
                     -- Find file
                     {
-                        icon = "󰈞       ",
+                        icon = "󰈞\t\t",
                         icon_hl = "DashboardIcon",
                         desc = "Find File",
                         desc_hl = "DashboardDesc",
@@ -49,7 +49,7 @@ return {
                     },
                     -- Find String
                     {
-                        icon = "       ",
+                        icon = "\t\t",
                         icon_hl = "DashboardIcon",
                         desc = "Find String",
                         desc_hl = "DashboardDesc",
@@ -60,7 +60,7 @@ return {
                     },
                     -- Open File explorer
                     {
-                        icon = "       ",
+                        icon = "\t\t",
                         icon_hl = "DashboardIcon",
                         desc = "Open File Explorer",
                         desc_hl = "DashboardDesc",
@@ -71,7 +71,7 @@ return {
                     },
                     -- Open Lazy
                     {
-                        icon = "       ",
+                        icon = "\t\t",
                         icon_hl = "DashboardIcon",
                         desc = "Open Lazy",
                         desc_hl = "DashboardDesc",
@@ -79,6 +79,17 @@ return {
                         key_map = "SPC l",
                         key_format = "\t\t%s",
                         action = "Lazy",
+                    },
+                    -- Close Neovim
+                    {
+                        icon = "\t\t",
+                        icon_hl = "DashboardIcon",
+                        desc = "Close Neovim",
+                        desc_hl = "DashboardDesc",
+                        key = "q",
+                        key_map = "SPC q",
+                        key_format = "\t\t%s",
+                        action = "q",
                     },
                 },
 			},
