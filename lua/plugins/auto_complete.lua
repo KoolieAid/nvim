@@ -67,4 +67,11 @@ return {
         "github/copilot.vim",
         event = "InsertEnter",
     },
+    -- Auto corrrect
+    {
+        "https://git.sr.ht/~swaits/thethethe.nvim",
+        ft = "txt",
+        event = "InsertEnter",
+        config = true,
+    },
 }
