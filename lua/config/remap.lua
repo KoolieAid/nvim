@@ -24,3 +24,6 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("", "<C-c>", "<Esc>")
 
 vim.keymap.set("i", "<C-BS>", "<C-w>")
+
+-- Terminal
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
