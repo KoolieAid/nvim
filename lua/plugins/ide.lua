@@ -107,10 +107,5 @@ return {
             },
         },
     },
-    {
-        "numToStr/Comment.nvim",
-        name = "comment",
-        config = true,
-        event = "LspAttach",
-    },
+    -- `gc motion` to comment and `gcc` to comment current line
 }

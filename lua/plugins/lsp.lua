@@ -5,6 +5,10 @@ local default_lsp_cfg = require("config.lsp").default_cfg
 local specific_cfg = require("config.lsp").opts
 
 local function attach_lsp_keymaps()
+
+    -- Enable inlay hints
+    vim.lsp.inlay_hint.enable()
+
     -- Use LspAttach autocommand to only map the following keys
     -- after a language server attaches to the current buffer
     vim.api.nvim_create_autocmd("LspAttach", {
