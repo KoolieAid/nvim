@@ -7,6 +7,12 @@ return {
         build = ":TSUpdate",
         event = "InsertEnter",
         config = function()
+
+            -- If on a Windows machine use zig compiler, since it works better on Windows
+            if vim.loop.os_uname().sysname == "Windows_NT" then
+                require("nvim-treesitter.install").compilers = { "zig" }
+            end
+
             require("nvim-treesitter.configs").setup({
                 -- A list of parser names, or "all" (the five listed parsers should always be installed)
                 ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "c_sharp" },
