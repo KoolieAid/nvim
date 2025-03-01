@@ -2,7 +2,7 @@ return {
     installed = {
         "rust_analyzer",
         "clangd",
-        "omnisharp",
+        "csharp_ls",
         "lua_ls",
     },
     -- The default configuration for the installed LSPs.

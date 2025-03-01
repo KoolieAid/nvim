@@ -50,7 +50,6 @@ return {
     },
     {
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.5",
         cmd = "Telescope",
         keys = {
             {
@@ -94,7 +93,14 @@ return {
                         i = { ["<C-c>"] = { "<Esc>", type = "command" } },
                     },
                 },
+                extensions = {
+                    ["ui-select"] = {
+                        require("telescope.themes").get_dropdown({}),
+                    },
+                },
             })
+
+            require("telescope").load_extension("ui-select")
         end,
     },
     {

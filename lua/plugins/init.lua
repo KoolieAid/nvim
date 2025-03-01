@@ -29,18 +29,4 @@ return {
         config = true,
         cmd = "Rooter",
     },
-    -- Specific to C#
-    {
-        "iabdelkareem/csharp.nvim",
-        ft = "cs",
-        dependencies = {
-            "williamboman/mason.nvim",
-            "Tastyep/structlog.nvim",
-        },
-        opts = {
-            lsp = {
-                cmd_path = true,
-            },
-        },
-    },
 }
