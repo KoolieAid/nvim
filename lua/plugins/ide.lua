@@ -80,7 +80,7 @@ return {
         config = function()
             local telescope = require("telescope.builtin")
             vim.keymap.set("n", "<leader>ps", function()
-                telescope.grep_string({ search = vim.fn.input("Grep > ") })
+                telescope.live_grep()
             end)
 
             local actions = require("telescope.actions")
