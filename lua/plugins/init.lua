@@ -29,4 +29,9 @@ return {
         config = true,
         cmd = "Rooter",
     },
+    {
+        "NotAShelf/syntax-gaslighting.nvim",
+        event = { "BufRead", "BufAdd" },
+        config = true,
+    },
 }
