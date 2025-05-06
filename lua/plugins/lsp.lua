@@ -14,6 +14,13 @@ local function attach_lsp_keymaps()
     vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("UserLspConfig", {}),
         callback = function(ev)
+
+            -- Built-in nvim auto-complete
+            local client = vim.lsp.get_client_by_id(ev.data.client_id)
+            if client:supports_method('textDocument/completion') then
+                vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+            end
+
             -- Enable completion triggered by <c-x><c-o>
             vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 
@@ -25,7 +32,7 @@ local function attach_lsp_keymaps()
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
             vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
             vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-            vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+            -- vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
             vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
             vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts)
             vim.keymap.set("n", "<leader>wl", function()
