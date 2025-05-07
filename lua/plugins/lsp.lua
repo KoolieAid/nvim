@@ -70,22 +70,18 @@ return {
         },
         config = function()
             local mason_cfg = require("mason-lspconfig")
-            mason_cfg.setup_handlers({
-                function(ls)
-                    local capabilities = require("cmp_nvim_lsp").default_capabilities()
-                    local opts = table.deepcopy(default_lsp_cfg)
-                    opts.capabilities = capabilities
 
-                    if specific_cfg[ls] then
-                        local cfg = specific_cfg[ls]
-                        for k, v in pairs(cfg) do
-                            opts[k] = v
-                        end
-                    end
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
+            local opts = table.deepcopy(default_lsp_cfg)
+            opts.capabilities = capabilities
 
-                    require("lspconfig")[ls].setup(opts)
-                end,
-            })
+            vim.lsp.config("*", opts)
+
+            for ls, cfg in pairs(specific_cfg) do
+                vim.lsp.config(ls, cfg);
+            end
+            
+            vim.lsp.enable(mason_cfg.get_installed_servers())
 
             attach_lsp_keymaps()
         end,
