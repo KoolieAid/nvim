@@ -77,6 +77,9 @@ return {
                 desc = "Find help tags",
             },
         },
+        dependencies = {
+            "nvim-telescope/telescope-ui-select.nvim",
+        },
         config = function()
             local telescope = require("telescope.builtin")
             vim.keymap.set("n", "<leader>ps", function()

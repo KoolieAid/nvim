@@ -1,7 +1,7 @@
 return {
     formatters = {
         "stylua",
-        "rustfmt",
+        -- "rustfmt",
         "csharpier",
     },
     diagnostics = {},
