@@ -35,7 +35,7 @@ return {
         config = true,
     },
     {
-        dir = "~/pastevim.nvim",
+        "KoolieAid/pastevim.nvim",
         cmd = "Pastevim",
         config = function ()
             require("pastevim").setup({
