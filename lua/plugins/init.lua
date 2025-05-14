@@ -34,4 +34,14 @@ return {
         event = { "BufRead", "BufAdd" },
         config = true,
     },
+    {
+        dir = "~/pastevim.nvim",
+        cmd = "Pastevim",
+        config = function ()
+            require("pastevim").setup({
+                api_key = require("config.secrets").pastebin_key,
+                expiry = "10M",
+            })
+        end
+    },
 }
