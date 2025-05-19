@@ -37,11 +37,9 @@ return {
     {
         "KoolieAid/pastevim.nvim",
         cmd = "Pastevim",
-        config = function ()
-            require("pastevim").setup({
-                api_key = require("config.secrets").pastebin_key,
-                expiry = "10M",
-            })
-        end
+        opts = {
+            api_key = require("config.secrets").pastebin_key,
+            expiry = "10M",
+        },
     },
 }
