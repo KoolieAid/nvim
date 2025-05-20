@@ -42,4 +42,16 @@ return {
             expiry = "10M",
         },
     },
+    {
+        "m4xshen/hardtime.nvim",
+        dependencies = { "MunifTanjim/nui.nvim" },
+        -- Allows free viewing with mouse when just reviewing code
+        opts = {
+            disable_mouse = false,
+            disabled_keys = {
+                ["<Up>"] = false,
+                ["<Down>"] = false,
+            }
+        },
+    },
 }
