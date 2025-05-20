@@ -8,6 +8,7 @@ return {
     },
     {
         "ThePrimeagen/harpoon",
+        branch = "harpoon2",
         keys = {
             { "<leader>n", desc = "Open next file" },
             { "<leader>p", desc = "Open previous file" },
@@ -23,28 +24,29 @@ return {
             "nvim-lua/plenary.nvim",
         },
         config = function()
-            local mark = require("harpoon.mark")
-            local ui = require("harpoon.ui")
+            local harpoon = require("harpoon")
+            -- Required for harpoon2
+            harpoon:setup()
 
-            vim.keymap.set("n", "<leader>n", ui.nav_next)
-            vim.keymap.set("n", "<leader>p", ui.nav_prev)
+            vim.keymap.set("n", "<leader>n", function() harpoon:list():next() end)
+            vim.keymap.set("n", "<leader>p", function() harpoon:list():prev() end)
 
-            vim.keymap.set("n", "<leader>a", mark.add_file)
-            vim.keymap.set("n", "<leader>r", mark.rm_file)
+            vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+            vim.keymap.set("n", "<leader>r", function() harpoon:list():remove() end)
 
-            vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
+            vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
             vim.keymap.set("n", "<C-h>", function()
-                ui.nav_file(1)
+                harpoon:list():select(1)
             end)
             vim.keymap.set("n", "<C-j>", function()
-                ui.nav_file(2)
+                harpoon:list():select(2)
             end)
             vim.keymap.set("n", "<C-k>", function()
-                ui.nav_file(3)
+                harpoon:list():select(3)
             end)
             vim.keymap.set("n", "<C-l>", function()
-                ui.nav_file(4)
+                harpoon:list():select(4)
             end)
         end,
     },
