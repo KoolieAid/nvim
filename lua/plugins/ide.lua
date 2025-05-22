@@ -28,8 +28,9 @@ return {
             -- Required for harpoon2
             harpoon:setup()
 
-            vim.keymap.set("n", "<leader>n", function() harpoon:list():next() end)
-            vim.keymap.set("n", "<leader>p", function() harpoon:list():prev() end)
+            -- Might not need these, since <leader>p delays due to Oil and telescope "pf pv"
+            -- vim.keymap.set("n", "<leader>n", function() harpoon:list():next() end)
+            -- vim.keymap.set("n", "<leader>p", function() harpoon:list():prev() end)
 
             vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
             vim.keymap.set("n", "<leader>r", function() harpoon:list():remove() end)

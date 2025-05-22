@@ -44,6 +44,7 @@ return {
     },
     {
         "m4xshen/hardtime.nvim",
+        event = "VeryLazy",
         dependencies = { "MunifTanjim/nui.nvim" },
         -- Allows free viewing with mouse when just reviewing code
         opts = {

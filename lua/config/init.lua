@@ -11,3 +11,11 @@ end
 if vim.g.neovide then
     require("config.neovide")
 end
+
+vim.api.nvim_create_autocmd("TermOpen", {
+    pattern = "*",
+    callback = function()
+        vim.opt_local.number = true
+        vim.opt_local.relativenumber = true
+    end,
+})
