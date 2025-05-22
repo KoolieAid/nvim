@@ -24,8 +24,9 @@ local function attach_lsp_keymaps()
             -- See `:help vim.lsp.*` for documentation on any of the below functions
             local opts = { buffer = ev.buf }
 
-            vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+            vim.keymap.set("n", "gD", vim.lsp.buf.type_definition, opts)
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+            vim.keymap.set("n", "<leader>D", vim.lsp.buf.declaration, opts)
             vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
             -- vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts) -- Replaced with 'gri'
             -- vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts) -- Replaced with 'C-s' in insert mode
@@ -34,7 +35,6 @@ local function attach_lsp_keymaps()
             vim.keymap.set("n", "<leader>wl", function()
                 print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
             end, opts)
-            vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
             -- vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- Replaced with 'grn'
             -- vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- Replaced with 'gra'
             -- vim.keymap.set("n", "gr", vim.lsp.buf.references, opts) -- Replaced with grr
