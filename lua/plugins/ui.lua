@@ -105,7 +105,8 @@ return {
 		opts = {
 			sections = {
 				lualine_x = {
-					"%S",
+					"%S", -- What you're currently typing
+                    "lsp_status",
 					"fileformat",
 					"filetype",
 				},
