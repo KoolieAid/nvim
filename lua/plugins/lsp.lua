@@ -86,4 +86,15 @@ return {
         keys = { "<leader>ca", desc = "Code actions" },
         dependencies = { "nvim-telescope/telescope.nvim" },
     },
+    -- Works only on Windows, and I wonder why microsoft. Probably the mono runtime 🤷‍♂️
+    {
+        "Decodetalkers/csharpls-extended-lsp.nvim",
+        dependencies = { "nvim-telescope/telescope.nvim" },
+        event = "LspAttach",
+        ft = "cs",
+        config = function ()
+            require("csharpls_extended").buf_read_cmd_bind()
+            -- require("telescope").load_extension("csharpls_definition")
+        end
+    },
 }

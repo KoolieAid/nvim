@@ -107,6 +107,8 @@ return {
             })
 
             require("telescope").load_extension("ui-select")
+            -- Unsure why this doesn't work when tested
+            -- require("telescope").load_extension("csharpls_definition")
         end,
     },
     {
