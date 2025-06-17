@@ -32,7 +32,9 @@ return {
     {
         "NotAShelf/syntax-gaslighting.nvim",
         event = { "BufRead", "BufAdd" },
-        config = true,
+        opts = {
+            highlight = "DiagnosticHint",
+        },
     },
     {
         "KoolieAid/pastevim.nvim",
