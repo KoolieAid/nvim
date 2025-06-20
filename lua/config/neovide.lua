@@ -10,3 +10,5 @@ vim.g.neovide_window_blurred = true
 vim.g.neovide_floating_blur_amount_y = -1
 
 vim.g.neovide_cursor_vfx_mode = "torpedo"
+
+vim.g.neovide_refresh_rate = 165

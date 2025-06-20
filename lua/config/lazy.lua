@@ -18,4 +18,8 @@ require("lazy").setup("plugins", {
     performance = {
         rtp = { disabled_plugins = { "netrwPlugin" } },
     },
+    dev = {
+        path = "~/nvim_plugins",
+        fallback = false,
+    },
 })

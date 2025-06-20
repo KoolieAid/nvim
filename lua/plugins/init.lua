@@ -3,6 +3,7 @@ return {
     {
         "stevearc/oil.nvim",
         cmd = "Oil",
+        event = "VimEnter",
         keys = {
             {
                 "<leader>pv",
@@ -11,6 +12,7 @@ return {
             },
         },
         opts = {
+            default_file_explorer = true,
             columns = {
                 "icon",
                 "size",
@@ -34,6 +36,16 @@ return {
         event = { "BufRead", "BufAdd" },
         opts = {
             highlight = "DiagnosticHint",
+            filetypes_to_ignore = { "netrw", "oil" },
+            merge_messages = true,
+            messages = {
+                "Yea, I don't think this works.",
+                "You probably should double check this. yikes.",
+                "YIKES...",
+                "I feel like there's a better way",
+                "Did you even account for the edge case?",
+                "ngl, ur so wrong for this.",
+            },
         },
     },
     {
