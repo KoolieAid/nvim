@@ -36,7 +36,7 @@ return {
         event = { "BufRead", "BufAdd" },
         opts = {
             highlight = "DiagnosticHint",
-            filetypes_to_ignore = { "netrw", "oil" },
+            filetypes_to_ignore = { "netrw", "oil", "dashboard" },
             merge_messages = true,
             messages = {
                 "Yea, I don't think this works.",
