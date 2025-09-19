@@ -1,7 +1,7 @@
 require("util")
 require("config")
 
-vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("rose-pine")
 
 -- Line numbers
 vim.wo.number = true

@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
     install = {
-        colorsceme = { "catppuccin", "habamax" },
+        colorscheme = { "catppuccin", "rose-pine", "habamax" },
     },
     performance = {
         rtp = { disabled_plugins = { "netrwPlugin" } },
