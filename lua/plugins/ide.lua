@@ -26,7 +26,12 @@ return {
         config = function()
             local harpoon = require("harpoon")
             -- Required for harpoon2
-            harpoon:setup()
+            harpoon:setup({
+                settings = {
+                    sync_on_ui_close = true,
+                    save_on_toggle = true,
+                }
+            })
 
             -- Might not need these, since <leader>p delays due to Oil and telescope "pf pv"
             -- vim.keymap.set("n", "<leader>n", function() harpoon:list():next() end)
