@@ -1,4 +1,18 @@
 return {
+    {
+        dir = "~/nvim_plugins/neovibe.nvim",
+        dev = true,
+        name = "neovibe.nvim",
+        cmd = "Vibe",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+        opts = {
+            key = require("config.secrets").ai_key,
+            model = "openrouter::deepseek/deepseek-r1:free",
+            timeout = 25000,
+        },
+    },
     -- File explorer
     {
         "stevearc/oil.nvim",
