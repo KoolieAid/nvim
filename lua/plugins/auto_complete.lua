@@ -1,66 +1,32 @@
 return {
-    -- Autocompletion engine, adds the completion floating window
     {
-        "hrsh7th/nvim-cmp",
-        -- load cmp on InsertEnter
-        event = "InsertEnter",
-        -- these dependencies will only be loaded when cmp loads
-        -- dependencies are always lazy-loaded unless specified otherwise
-        dependencies = {
-            "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-buffer",
-        },
-        config = function()
-            local cmp = require("cmp")
-            cmp.setup({
-                snippet = {
-                    expand = function(args)
-                        require("luasnip").lsp_expand(args.body)
-                    end,
-                },
-                window = {
-                    completion = cmp.config.window.bordered(),
-                    documentation = cmp.config.window.bordered(),
-                },
-                mapping = cmp.mapping.preset.insert({
-                    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-                    ["<C-f>"] = cmp.mapping.scroll_docs(4),
-                    ["<C-Space>"] = cmp.mapping.complete(),
-                    ["<C-q>"] = cmp.mapping.abort(),
-                    ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-                }),
-                sources = cmp.config.sources({
-                    { name = "nvim_lsp" },
-                    { name = "luasnip" },
-                }, {
-                    { name = "buffer" },
-                }),
-            })
-        end,
-    },
+        'saghen/blink.cmp',
+        dependencies = { 'rafamadriz/friendly-snippets' },
+        version = '1.*',
+        opts = {
+            -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
+            -- 'super-tab' for mappings similar to vscode (tab to accept)
+            -- 'enter' for enter to accept
+            -- 'none' for no mappings
+            --
+            -- All presets have the following mappings:
+            -- C-space: Open menu or open docs if already open
+            -- C-n/C-p or Up/Down: Select next/previous item
+            -- C-e: Hide menu
+            -- C-k: Toggle signature help (if signature.enabled = true)
+            --
+            -- See :h blink-cmp-config-keymap for defining your own keymap
+            keymap = { preset = 'default' },
 
-    -- The point of where I got no damn clue of what I'm doing
-    -- Source engine of snippets, gets the sources from snippet repositories and displays in nvim-cmp
-    {
-        "L3MON4D3/LuaSnip",
-        event = "InsertEnter",
-        dependencies = {
-            -- Collection of snippets / Repository of snippets
-            "rafamadriz/friendly-snippets",
+            appearance = {
+                nerd_font_variant = 'normal' -- Or 'mono'
+            },
+
+            signature = { enabled = true },
+
+            -- (Default) Only show the documentation popup when manually triggered
+            completion = { documentation = { auto_show = false } },
         },
-        config = function()
-            require("luasnip.loaders.from_vscode").lazy_load()
-        end,
-    },
-    -- Bridge of snippets and autocompletion engine, autocompletes based on snippet
-    {
-        "saadparwaiz1/cmp_luasnip",
-        event = "InsertEnter",
-    },
-    -- Bridge of autocompletion and LSPs, acts like LuaSnip, but the sources are from language servers
-    {
-        "hrsh7th/cmp-nvim-lsp",
-        event = "InsertEnter",
     },
     -- Copilot, autocompletion engine that uses AI to generate code
     {
